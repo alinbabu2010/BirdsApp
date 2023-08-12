@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 kotlin {
@@ -26,6 +27,7 @@ kotlin {
     }
 
     sourceSets {
+        val ktorVersion = "2.3.3"
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
@@ -36,7 +38,11 @@ kotlin {
                 // Kamel Image Loading
                 implementation("media.kamel:kamel-image:0.7.1")
                 // Ktor
-                implementation("io.ktor:ktor-client-core:2.3.3")
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                // Ktor content negotiation
+                implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+                // Ktor kotlin serialization
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
         val androidMain by getting {
