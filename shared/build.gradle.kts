@@ -43,6 +43,9 @@ kotlin {
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 // Ktor kotlin serialization
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+                // Mobile Kotlin Model-View-ViewModel architecture components
+                api("dev.icerock.moko:mvvm-core:0.16.1")
+                api("dev.icerock.moko:mvvm-compose:0.16.1")
             }
         }
         val androidMain by getting {
