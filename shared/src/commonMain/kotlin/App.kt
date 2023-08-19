@@ -36,5 +36,3 @@ fun App() {
         BirdsScreen(viewModel = birdsViewModel)
     }
 }
-
-expect fun getPlatformName(): String
